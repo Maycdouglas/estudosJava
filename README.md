@@ -148,3 +148,92 @@ Portanto, na maioria das situações, utilizamos o tipo `int` para representar n
 > boolean o; // b=false
 > ```
 
+### Tipos Wrappers
+
+Os tipos primitivos não são objetos, mas às vezes é necessário trabalhar com eles como se fossem. Por exemplo, quando você precisa passar um valor primitivo como um parâmetro de um método, você precisa converter o valor primitivo em um objeto. Nesse caso, você pode usar os tipos wrappers.
+
+Os **tipos wrappers** são classes que representam os tipos primitivos. Eles são imutáveis, o que significa que uma vez criado um objeto wrapper, seu valor não pode ser alterado para garantir a segurança.
+
+Os seguintes tipos Wrappers estão disponíveis em Java:
+
+```java
+Integer     (int)
+Long        (long)
+Float       (float)
+Double      (double)
+Short       (short)
+Byte        (byte)
+Boolean     (boolean)
+Character   (char)
+```
+
+#### Conversão de Tipos
+
+A conversão de tipos é necessária quando você deseja armazenar um valor de um tipo de dado em uma variável de outro tipo. Por exemplo, você pode armazenar um valor `int` em uma variável de tipo `double` porque o tipo `double` pode armazenar valores inteiros e fracionários.
+
+- **Conversão de Tipos Explícita:** 
+  - Acontece quando você força a conversão de um tipo para outro, geralmente de um tipo maior para um tipo menor, o que pode causar perda de dados.
+- **Conversão de Tipos Implícita:** 
+  - Ocorre automaticamente quando o Java entende que não há risco de perda de dados, geralmente de um tipo menor para um tipo maior.
+
+```java
+// conversão de tipos explicita
+double numeroDouble = 9.7;
+int numeroInt = (int) numeroDouble; // Conversão explícita
+System.out.println(numeroInt); // Saída: 9
+
+
+// conversão de tipos implícita
+int numeroInt = 42;
+double numeroDouble = numeroInt; // Conversão implícita
+System.out.println(numeroDouble); // Saída: 42.0
+```
+
+### Métodos Wrapper
+
+Os tipos Wrappers em Java oferecem uma série de métodos úteis para a manipulação de tipos primitivos. Alguns desses métodos incluem:
+
+- Métodos de parsing: Esses métodos permitem a conversão de strings em tipos primitivos equivalentes.
+  ```java
+  String num = "100";
+  int i = Integer.parseInt(num);
+  System.out.println(i); // 100
+  ```
+
+- Métodos de conversão: Esses métodos permitem a conversão de tipos primitivos para objetos e vice-versa.
+  ```java
+  String num = "100";
+  Integer obj = Integer.valueOf(n);
+  System.out.println(obj); // 100
+  ```
+
+- Métodos de comparação: Esses métodos permitem comparar objetos Wrappers para verificar se são iguais ou se um é maior ou menor que o outro.
+  ```java
+  Integer obj1 = new Integer(100);
+  Integer obj2 = new Integer(100);
+  System.out.println(obj1.equals(obj2)); // true
+  System.out.println(obj1.compareTo(obj2)); // 0 se iguais, -1 se o obj1 é menor e 1 se o obj1 é maior
+  ```
+
+- Métodos de informação: Esses métodos fornecem informações sobre o tipo Wrapper, como o valor mínimo e máximo que pode ser representado.
+  ```java
+  System.out.println(Integer.MAX_VALUE); // 2147483647
+  System.out.println(Integer.MIN_VALUE); // -2147483648
+  ```
+
+### Tipos customizados
+
+Os tipos customizados são bibliotecas ou **pacotes externos** que não fazem parte por padrão no Java, mas são adicionados ao projeto para fornecer recursos adicionais que podem ser úteis na construção de aplicativos.
+
+Alguns exemplos de tipos customizados incluem:
+
+| Nome do Projeto | Pacote principal      | Finalidade                                                                                                                   |
+| :-------------- | :-------------------- | :--------------------------------------------------------------------------------------------------------------------------- |
+| Joda Time       | org.joda.time         | Fornece soluções mais avançada de datas e horas incluindo suporte a fusos horários e operações de data/hora mais avançadas.  |
+| Gson            | com.google.gson       | Fornece suporte para converter objetos Java em sua representação JSON e vice-versa.                                          |
+| Jackson         | com.fasterxml.jackson | Fornece suporte para processamento de JSON, incluindo conversão de objetos Java para e de JSON.                              |
+| Apache Commons  | org.apache.commons    | Fornece uma série de utilitários que podem ser usados para tarefas comuns, como manipulação de strings, arquivos e coleções. |
+| Apache POI      | org.apache.poi        | Fornece suporte para leitura e escrita de arquivos do Microsoft Office, incluindo arquivos do Excel.                         |
+| Apache Log4j    | org.apache.log4j      | Fornece suporte para registro de eventos.                                                                                    |
+| Hibernate       | org.hibernate         | Fornece suporte para mapeamento objeto-relacional (ORM).                                                                     |
+| Junit           | org.junit             | Fornece suporte para testes unitários.                                                                                       |
