@@ -102,3 +102,49 @@
 | ------- | ------------------------------------------------------------------- | :----: | :------: | :----: |
 | const   | não utilize para declarar constantes                                |        |          |        |
 | goto    | não implementada na linguagem Java, por ser considerada prejudicial |        |          |        |
+
+## Tipos e Variáveis
+### Tipos primitivos
+
+> Os oito tipos primitivos em Java são:
+> `int`, `byte`, `short`, `long`, `float`, `double`, `boolean` e `char` – esses tipos não são objetos e portanto representam valores brutos. Eles são armazenados diretamente na pilha de memória.
+
+Tabela de Tipos Primitivos e seus valores:
+
+| Tipo  | Memória | Valor Mínimo               | Valor Máximo              |
+| ----- | ------- | -------------------------- | ------------------------- |
+| byte  | 1 byte  | -128                       | 127                       |
+| short | 2 byte  | -32.768                    | 32.767                    |
+| int   | 4 bytes | -2.147.483.648             | 2.147.483.647             |
+| long  | 8 bytes | -9.223.372.036.854.775.808 | 9.223.372.036.854.775.807 |
+
+Os tipos primitivos, que podem conter partes fracionárias:
+
+| Tipo   | Memória | Valor Mínimo   | Valor Máximo  | Precisão      |
+| ------ | ------- | -------------- | ------------- | ------------- |
+| float  | 4 bytes | -3,4028E + 38  | 3,4028E + 38  | 6 – 7 dígitos |
+| double | 8 bytes | -1,7976E + 308 | 1,7976E + 308 | 15 dígitos    |
+
+Embora o tipo `float` ocupe menos espaço na memória do que o tipo `double`, ele é menos utilizado devido a uma limitação na precisão decimal entre 6 e 7 dígitos.
+
+Com os avanços nos computadores, não há mais a necessidade de se preocupar com o uso dos tipos `short` e `byte`, pois a memória é abundante.
+
+De maneira semelhante, o tipo `long` também é pouco utilizado, pois valores grandes são raros de se trabalhar.
+
+Portanto, na maioria das situações, utilizamos o tipo `int` para representar números inteiros ou `double` para representar números fracionados.
+
+> Devemos compreender que os tipos primitivos sempre terão um valor padrão mesmo NÃO havendo uma atribuição explícita, veja o código abaixo:
+>
+> ```java
+> byte    b; // b=0
+> short   s; // s=0
+> int     i; // i=0
+> long    l; // l=0
+>
+> float   f; // f=0.0
+> double  d; // d=0.0
+>
+> char    c; // c='\u0000'
+> boolean o; // b=false
+> ```
+
