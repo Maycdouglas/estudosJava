@@ -237,3 +237,48 @@ Alguns exemplos de tipos customizados incluem:
 | Apache Log4j    | org.apache.log4j      | Fornece suporte para registro de eventos.                                                                                    |
 | Hibernate       | org.hibernate         | Fornece suporte para mapeamento objeto-relacional (ORM).                                                                     |
 | Junit           | org.junit             | Fornece suporte para testes unitários.                                                                                       |
+
+### Javadoc
+
+Javadoc é um gerador de documentação criado pela Sun Microsystems para documentar a API dos programas em Java, a partir do código-fonte. O resultado é expresso em HTML. É constituído, basicamente, por algumas marcações muitos simples inseridas nos comentários do programa.
+
+Este sistema é o padrão de documentação de classes em Java, e muitas dos IDEs desta linguagem irão automaticamente gerar um Javadoc em HTML.
+
+### Tags
+
+Os desenvolvedores usam certos estilos de comentários e tags Javadoc ao documentar códigos-fonte. Um bloco de comentário em Java iniciado com /** irá iniciar um bloco de comentário Javadoc, que será incluído no HTML gerado. Uma tag Javadoc começa com um "@" (arroba). Na tabela abaixo, algumas destas tags.
+
+|tag|descrição|
+|---|---------|
+|@author| Nome do desenvolvedor|
+|@deprecated| 	Marca o método como deprecated. Algumas IDEs exibirão um alerta de compilação se o método for chamado.|
+|@exception|Documenta uma exceção lançada por um método — veja também @throws.|
+|@param |Define um parâmetro do método. Requerido para cada parâmetro.|
+|@return|Documenta o valor de retorno. Essa tag não deve ser usada para construtores ou métodos definidos com o tipo de retorno void.|
+|@see|Documenta uma associação a outro método ou classe.|
+|@since|Documenta quando o método foi adicionado a a classe.|
+|@throws|Documenta uma exceção lançada por um método. É um sinônimo para a @exception introduzida no Javadoc 1.2.|
+|@version| Exibe o número da versão de uma classe ou um método.|
+
+Vamos explorar como documentar um classe simples que realizar a divisão entre dois números inteiros.
+
+```java
+/**
+ * Calculadora Simples
+ * @author Gleyson Sampaio
+ */
+public class Calculadora {
+  /**
+   * Realiza a divisão entre dois números inteiros
+   *
+   * @param dividendo     Número que será dividido
+   * @param divisor       Número que irá dividir o dividendo
+   * @return              O resultado da divisão entre o dividendo e o divisor
+   * @author              Gleyson Sampaio
+   * @exception 	        java.lang.ArithmeticException em caso de passar o divisor igual a zero 0.
+   */
+  static Integer dividir(Integer dividendo, Integer divisor){
+    return dividendo / divisor;
+  }
+}
+```
